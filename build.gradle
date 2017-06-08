@@ -1,0 +1,38 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.3.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+	tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+processResources.destinationDir = compileJava.destinationDir
+compileJava.dependsOn processResources
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter')
+	runtime('org.springframework.boot:spring-boot-devtools')
+	runtime('mysql:mysql-connector-java')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('org.seasar.doma.boot:doma-spring-boot-starter:1.0.2')
+	compile group: 'org.freemarker', name : 'freemarker', version: '2.3.22'
+	compile 'org.apache.commons:commons-email:1.4'
+}
+

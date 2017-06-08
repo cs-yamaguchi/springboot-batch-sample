@@ -1,7 +1,7 @@
 # springboot-batch-sample
 
 springboot
-　batchは使用せず、エントリポイント起動
+　spring-batchは使用せず、エントリポイント起動
  
 mysql
 　hogeDB作成

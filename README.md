@@ -1,17 +1,20 @@
-# springboot-batch-sample
+# *springboot-batch-sample*
 
-springboot
-　spring-batchは使用せず、エントリポイント起動
- 
-mysql
-　hogeDB作成
+## springboot
+spring-batchは使用せず
 
-Doma2
-　トランザクションの制御確認
+エントリポイント起動
 
-commons mail
- springmailではSSLに非対応のため
-　passwordはマスク
+## mysql
+hoge論理ＤＢ作成
 
-logback
-　デイリーローテーションでファイルアペンダを確認
+## Doma2
+トランザクションの制御確認
+
+## commons mail
+springmailではSSLに非対応のためcommonsでjavamail
+
+passwordはマスク
+
+## logback
+デイリーローテーションでログファイルのアペンダを確認
